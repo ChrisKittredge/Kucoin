@@ -11,7 +11,6 @@ module Kucoin
           
           params    =   {type: type, status: status, limit: limit, page: page, coin: coin}
           params.delete_if { |key, value| value.nil? }
-          puts 'got here'
           get("/account/wallet/records", params: params, options: options)&.fetch("data", {})
         end
         
